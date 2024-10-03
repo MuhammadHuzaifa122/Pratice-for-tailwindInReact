@@ -1,5 +1,6 @@
 import React from "react";
 import viteLogo from "/vite.svg";
+import { NavLink } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -7,13 +8,13 @@ export default function Header() {
       <img src={viteLogo} alt="viteLogo" />
       <ul className="flex gap-4 ">
         <li>
-          <a href="/">Home</a>
+          <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <a href="about">About</a>
+          <NavLink to="about">About</NavLink>
         </li>
         <li>
-          <a href="contact">Contact</a>
+          <NavLink to="contact">Contact</NavLink>
         </li>
       </ul>
     </header>
