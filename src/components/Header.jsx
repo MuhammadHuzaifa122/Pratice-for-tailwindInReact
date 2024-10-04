@@ -8,13 +8,28 @@ export default function Header() {
       <img src={viteLogo} alt="viteLogo" />
       <ul className="flex gap-4 ">
         <li>
-          <NavLink to="/">Home</NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? "text-red-500" : "")}
+            to="/"
+          >
+            Home
+          </NavLink>
         </li>
         <li>
-          <NavLink to="about">About</NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? "text-red-500" : "")}
+            to="about"
+          >
+            About
+          </NavLink>
         </li>
         <li>
-          <NavLink to="contact">Contact</NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? "text-red-500" : "")}
+            to="contact"
+          >
+            Contact
+          </NavLink>
         </li>
       </ul>
     </header>
