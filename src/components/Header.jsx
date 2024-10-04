@@ -1,8 +1,10 @@
-import React from "react";
 import viteLogo from "/vite.svg";
 import { NavLink } from "react-router-dom";
+import Model from "./Model.jsx";
+import { useState } from "react";
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <header className="flex justify-between px-4 md:px-8 shadow-md py-4">
       <img src={viteLogo} alt="viteLogo" />
@@ -30,6 +32,10 @@ export default function Header() {
           >
             Contact
           </NavLink>
+        </li>
+        <li>
+          <button onClick={() => setIsOpen(true)}>Sign In</button>
+          <Model isOpen={isOpen} setIsOpen={setIsOpen} />
         </li>
       </ul>
     </header>
