@@ -1,7 +1,7 @@
-import React from "react";
+import React, { Children } from "react";
 import { createPortal } from "react-dom";
 
-export default function Model({ isOpen, setIsOpen }) {
+export default function Model({ isOpen, setIsOpen, header, footer, children }) {
   return createPortal(
     <div
       onClick={() => setIsOpen(false)}
@@ -13,33 +13,11 @@ export default function Model({ isOpen, setIsOpen }) {
         } /* Prevents modal from closing on click */
         className="rounded-lg grow max-w-2xl bg-white p-4 shadow-lg"
       >
-        <div className="text-xl font-bold">Sign In</div>
+        {header}
         <div className="-mx-4 my-3 border-y px-4 py-4 flex flex-wrap gap-4">
-          <input
-            placeholder="Username"
-            className="grow rounded border border-gray-600 px-2 py-1"
-            type="text"
-          />
-          <input
-            placeholder="Password"
-            className="grow rounded border border-gray-600 px-2 py-1"
-            type="password"
-          />
+          {children}
         </div>
-        <div className="flex justify-end gap-4">
-          <button
-            onClick={() => setIsOpen(false)}
-            className="rounded-md bg-gray-300 px-6 py-2 font-semibold hover:bg-gray-400/80 active:bg-gray-400/60"
-          >
-            Cancel
-          </button>
-          <button
-            onClick={() => setIsOpen(false)}
-            className="rounded-md bg-blue-300 px-6 py-2 font-semibold hover:bg-blue-400/80 active:bg-blue-400/60"
-          >
-            Sign In
-          </button>
-        </div>
+        {footer}
       </div>
     </div>,
     document.getElementById("portal")
