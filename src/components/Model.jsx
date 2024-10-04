@@ -1,7 +1,8 @@
 import React from "react";
+import { createPortal } from "react-dom";
 
-export default function Modal({ isOpen, setIsOpen }) {
-  return (
+export default function Model({ isOpen, setIsOpen }) {
+  return createPortal(
     <div
       onClick={() => setIsOpen(false)}
       className={`fixed flex items-center px-4 justify-center inset-0 bg-black/40 ${isOpen ? "" : "hidden"}`}
@@ -40,6 +41,7 @@ export default function Modal({ isOpen, setIsOpen }) {
           </button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.getElementById("portal")
   );
 }
