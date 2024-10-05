@@ -6,8 +6,8 @@ export default function Home() {
   return (
     <>
       <div>Welcome to Home</div>
-      <NewCounter name="New Counter" />
-      <hr className="my-4" />
+      {/* <NewCounter name="New Counter" />
+      <hr className="my-4" /> */}
       <OldCounter name="Old Counter" />
     </>
   );
