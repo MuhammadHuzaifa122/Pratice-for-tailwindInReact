@@ -5,10 +5,8 @@ import Home from "./components/Home.jsx";
 import { createRoot } from "react-dom/client";
 import { lazy } from "react";
 
-const About = lazy(() => wait(1000).then(() => import("./components/About")));
-const Contact = lazy(() =>
-  wait(1000).then(() => import("./components/Contact"))
-);
+const About = lazy(() => wait(0).then(() => import("./components/About")));
+const Contact = lazy(() => wait(0).then(() => import("./components/Contact")));
 
 const router = createBrowserRouter([
   {
